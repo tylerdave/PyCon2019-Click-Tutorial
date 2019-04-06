@@ -5,17 +5,31 @@
 
 from setuptools import setup, find_packages
 
-with open('README.rst') as readme_file:
+with open('README.md') as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
-
-requirements = ['Click>=6.0', ]
+requirements = [
+    'Click>=6.0',
+    'coverage',
+    'pytest-runner',
+    'pytest',
+    'tox',
+    ]
 
 setup_requirements = ['pytest-runner', ]
 
-test_requirements = ['pytest', ]
+test_requirements = [
+    'pytest',
+    ]
+
+dev_requirements = [
+    'bumpversion',
+    'flake8',
+    'pip',
+    'twine',
+    'watchdog',
+    'wheel',
+    ]
 
 setup(
     author="Dave Forgac",
@@ -39,7 +53,7 @@ setup(
     },
     install_requires=requirements,
     license="Mozilla Public License 2.0 (MPL 2.0)",
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
     include_package_data=True,
     keywords='click_tutorial',
     name='click_tutorial',
@@ -47,6 +61,9 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
+    extras_require={
+        'dev': dev_requirements,
+    },
     url='https://github.com/tylerdave/click_tutorial',
     version='0.0.1',
     zip_safe=False,
