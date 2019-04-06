@@ -13,9 +13,10 @@ PyCon 2019 Tutorial: Writing Command Line Applications that Click
   
 ### Installation
 
+* Open a terminal or command prompt
 * Clone this repo:<br> `git clone https://github.com/tylerdave/PyCon2019-Click-Tutorial.git`
   * If you'd like to save a remote copy of your changes, create a new empty repo at your source code hosting service of choice and add it as a git remote:<br> `git remote add personal $NEW_REPO_URL`
-* Open a terminal or command prompt and `cd` to the root of the cloned repo
+* `cd` to the root of the cloned repo: <br>`cd PyCon2019-Click-Tutorial`
 * Create a and activate a virtualenv using your favorite method:
   * If using `pipenv` ([installation instructions](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv)):
     * `pipenv --python3`
