@@ -13,7 +13,7 @@ install:
 build: off
 
 test_script:
-    - "%PYTHON%\\python.exe -m tox"
+    - "%PYTHON%\\python.exe -m pytest -v"
 
 #after_test:
     # None
