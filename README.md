@@ -6,9 +6,6 @@ PyCon2019 Click Tutorial
 
 PyCon 2019 Tutorial: Writing Command Line Applications that Click
 
-[![TravisCI build status](https://travis-ci.org/tylerdave/PyCon2019-Click-Tutorial.svg?branch=master)](https://travis-ci.org/tylerdave/PyCon2019-Click-Tutorial)
-[![Appveyor build status](https://ci.appveyor.com/api/projects/status/3f5kpm416lb46bjo/branch/master?svg=true)](https://ci.appveyor.com/project/tylerdave/pycon2019-click-tutorial/branch/master)
-
 ## Setup
 
 ### Prerequisites
