@@ -11,6 +11,7 @@ with open('README.md', encoding='utf-8') as readme_file:
 
 requirements = [
     'Click>=6.0',
+    'colorama',
     'coverage',
     'pytest-runner',
     'pytest',

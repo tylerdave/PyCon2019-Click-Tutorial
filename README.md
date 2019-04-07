@@ -10,18 +10,20 @@ PyCon 2019 Tutorial: Writing Command Line Applications that Click
 
 ### Prerequisites
 
-* Python 3.5+ installed. [Installation Guide](https://docs.python-guide.org/starting/installation/#python-3-installation-guides)
+* Python 3.5+ installed. [Python Installation Guide](https://docs.python-guide.org/starting/installation/#python-3-installation-guides)
 * `virtualenv` & `pip` (Should be installed if you follow the guide above)
+* Git. [Git installation instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * Optional: `pipenv` or `virtualenvwrapper`
   
 ### Installation
 
-* Open a terminal or command prompt
+* Open a terminal / command prompt.
+  * Recommended on Windows: [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-6) or [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 * Clone this repo:<br> `git clone https://github.com/tylerdave/PyCon2019-Click-Tutorial.git`
   * If you'd like to save a remote copy of your changes, create a new empty repo at your source code hosting service of choice and add it as a git remote:<br> `git remote add personal $NEW_REPO_URL`
 * `cd` to the root of the cloned repo: <br>`cd PyCon2019-Click-Tutorial`
 * Create and activate a virtualenv using your favorite method and then install the package:
-  * If using `pipenv` ([installation instructions](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv)):
+  * **Recommended:** using `pipenv` ([installation instructions](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv)):
     * `pipenv --python python3`
     * `pipenv shell`
     * `pipenv install`
