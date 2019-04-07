@@ -15,12 +15,12 @@ def verify():
         try:
             result = check_func()
             if result:
-                click.secho("{}: {}".format(check_name, result), fg="green")
+                click.secho("{:>20}: {}".format(check_name, result), fg="green")
             else:
-                click.secho("{}: {}".format(check_name, result), fg="red")
+                click.secho("{:>20}: {}".format(check_name, result), fg="red")
                 any_failures = True
         except Exception as err:
-            click.secho("{}: ".format(check_name), fg="red", nl=False)
+            click.secho("{:>20}: ".format(check_name), fg="red", nl=False)
             click.secho(message=str(err), fg="red", bg="yellow")
             any_failures = True
     if any_failures:

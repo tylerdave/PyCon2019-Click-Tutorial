@@ -1,7 +1,7 @@
 import sys
 
 def get_python_version():
-    return sys.version
+    return sys.version.replace('\n', '')
 
 def check_python_35_plus():
     if sys.version_info.major == 3 and sys.version_info.minor >=5:
