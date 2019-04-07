@@ -21,6 +21,7 @@ PyCon 2019 Tutorial: Writing Command Line Applications that Click
   * If using `pipenv` ([installation instructions](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv)):
     * `pipenv --python python3`
     * `pipenv shell`
+    * `pipenv install`
   * If using `virtualenvwrapper`:
     * `mkvirtualenv --python python3 click-tutorial`
     * `workon click-tutorial`

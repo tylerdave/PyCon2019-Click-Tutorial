@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
-
-"""Console script for click_tutorial."""
 import sys
 import click
 
+from click_tutorial.checks import ALL_CHECKS
 
 @click.group()
 def main(args=None):
@@ -12,7 +10,23 @@ def main(args=None):
 @main.command()
 def verify():
     """Verify that your environment is set up correctly."""
-    click.echo("All good!")
+    any_failures = False
+    for check_name, check_func in ALL_CHECKS.items():
+        try:
+            result = check_func()
+            if result:
+                click.secho("{}: {}".format(check_name, result), fg="green")
+            else:
+                click.secho("{}: {}".format(check_name, result), fg="red")
+                any_failures = True
+        except Exception as err:
+            click.secho("{}: ".format(check_name), fg="red", nl=False)
+            click.secho(message=str(err), fg="red", bg="yellow")
+            any_failures = True
+    if any_failures:
+        click.secho("\nVerification failed. Please see setup instructions.", fg="red")
+    else:
+        click.secho("\nVerification successful! You're ready to run the tutorial!", fg="blue")
 
 
 if __name__ == "__main__":
