@@ -11,6 +11,12 @@ def tutorial(args=None):
 
 
 @tutorial.command()
+def hint():
+    """Get a hint for the current lesson."""
+    click.echo("Hints coming soon!")
+
+
+@tutorial.command()
 @click.option(
     "--reinitialize",
     "-r",
