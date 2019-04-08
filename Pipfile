@@ -7,4 +7,3 @@ verify_ssl = true
 
 [packages]
 click-tutorial = {path = ".",editable = true}
-
