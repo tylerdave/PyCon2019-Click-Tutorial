@@ -15,10 +15,11 @@ def test_cli_with_no_arguments():
     runner = CliRunner()
     result = runner.invoke(cli.tutorial)
     assert result.exit_code == 0
-    assert 'Click tutorial runner.' in result.output
+    assert "Click tutorial runner." in result.output
+
 
 def test_cli_help():
     runner = CliRunner()
-    help_result = runner.invoke(cli.tutorial, ['--help'])
+    help_result = runner.invoke(cli.tutorial, ["--help"])
     assert help_result.exit_code == 0
-    assert '--help  Show this message and exit.' in help_result.output
+    assert "--help  Show this message and exit." in help_result.output
