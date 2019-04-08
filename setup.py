@@ -51,6 +51,7 @@ setup(
         'console_scripts': [
             'click-tutorial=click_tutorial.cli:main',
             'tutorial=click_tutorial.cli:main',
+            'hello=click_tutorial.hello:cli',
         ],
     },
     install_requires=requirements,
