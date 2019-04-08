@@ -9,7 +9,15 @@ from setuptools import setup, find_packages
 with open("README.md", encoding="utf-8") as readme_file:
     readme = readme_file.read()
 
-requirements = ["Click>=6.0", "colorama", "coverage", "pytest-runner", "pytest", "tox"]
+requirements = [
+    "Click>=6.0",
+    "colorama",
+    "coverage",
+    "pytest-runner",
+    "pytest",
+    "pytoml",
+    "tox",
+]
 
 setup_requirements = ["pytest-runner"]
 
