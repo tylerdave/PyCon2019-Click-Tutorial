@@ -2,12 +2,25 @@ import sys
 import click
 
 from click_tutorial.checks import ALL_CHECKS
+from click_tutorial import state
 
 @click.group()
-def main(args=None):
+def tutorial(args=None):
     """Click tutorial runner."""
 
-@main.command()
+@tutorial.command()
+@click.option('--reinitialize', '-r', is_flag=True, help='Clear progress and reinitialize tutorial.')
+def init(reinitialize):
+    """(Re-)Initialize the tutorial"""
+    if state.is_initialized() and reinitialize is not True:
+        reinit = click.prompt("Already initialized. Do you want to clear progress and start over?")
+        if not reinit:
+            click.abort()
+    else:
+        state.initialize()
+        click.echo("Tutorial initialized! Time to start your first lesson!")
+
+@tutorial.command()
 def verify():
     """Verify that your environment is set up correctly."""
     any_failures = False

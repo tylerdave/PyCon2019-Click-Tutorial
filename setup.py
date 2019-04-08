@@ -49,8 +49,8 @@ setup(
     description="A tutorial for writing command line applications using click.",
     entry_points={
         'console_scripts': [
-            'click-tutorial=click_tutorial.cli:main',
-            'tutorial=click_tutorial.cli:main',
+            'click-tutorial=click_tutorial.cli:tutorial',
+            'tutorial=click_tutorial.cli:tutorial',
         ],
     },
     install_requires=requirements,
