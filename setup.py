@@ -16,6 +16,7 @@ requirements = [
     'pytest-runner',
     'pytest',
     'tox',
+    'tutorial-runner',
     ]
 
 setup_requirements = ['pytest-runner', ]
@@ -49,9 +50,8 @@ setup(
     description="A tutorial for writing command line applications using click.",
     entry_points={
         'console_scripts': [
-            'click-tutorial=click_tutorial.cli:main',
-            'tutorial=click_tutorial.cli:main',
             'hello=click_tutorial.hello:cli',
+            'part-01=lessons.part_01.cli:cli',
         ],
     },
     install_requires=requirements,
