@@ -2,18 +2,21 @@
 
 import click
 
-@click.argument('names', nargs=-1)
-@click.option('--int-option', type=click.INT)
-@click.option('--float-option', type=click.FLOAT)
-@click.option('--bool-option', type=click.BOOL)
-@click.option('--choice-option', type=click.Choice(['A', 'B', 'C']))
-@click.option('--greeting', '-g', default= "Hello", help="The greeting to display.")
-@click.option('--question/--no-question', help="Make the greeting a question.")
-@click.command(name='greet')
-def cli(names, int_option, float_option, bool_option, choice_option, greeting, question):
+
+@click.argument("names", nargs=-1)
+@click.option("--int-option", type=click.INT)
+@click.option("--float-option", type=click.FLOAT)
+@click.option("--bool-option", type=click.BOOL)
+@click.option("--choice-option", type=click.Choice(["A", "B", "C"]))
+@click.option("--greeting", "-g", default="Hello", help="The greeting to display.")
+@click.option("--question/--no-question", help="Make the greeting a question.")
+@click.command(name="greet")
+def cli(
+    names, int_option, float_option, bool_option, choice_option, greeting, question
+):
     """Displays a greeting."""
     if question:
-        punctuation = '?'
+        punctuation = "?"
     else:
         punctuation = "!"
     for name in names:

@@ -4,7 +4,6 @@ from lessons.part_01.cli import cli
 
 
 class BaseTutorialLesson:
-
     def setup(self):
         self.runner = CliRunner()
         self.command = cli
