@@ -5,9 +5,11 @@ import click
 
 from click_tutorial.checks import ALL_CHECKS
 
+
 @click.group()
 def main(args=None):
     """Click tutorial runner."""
+
 
 @main.command()
 def verify():
@@ -28,7 +30,9 @@ def verify():
     if any_failures:
         click.secho("\nVerification failed. Please see setup instructions.", fg="red")
     else:
-        click.secho("\nVerification successful! You're ready to run the tutorial!", fg="blue")
+        click.secho(
+            "\nVerification successful! You're ready to run the tutorial!", fg="blue"
+        )
 
 
 if __name__ == "__main__":

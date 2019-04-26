@@ -3,10 +3,9 @@
 import click
 
 
-@click.argument("name", nargs=-1)
 @click.command()
-def cli(name):
-    print("Hello, {}!".format(name))
+def cli():
+    print("Hello.")
 
 
 if __name__ == "__main__":
