@@ -26,3 +26,9 @@ class TestFileTypes(BaseTutorialLesson):
                 data = f.read()
             assert data == "Input data."
             assert "Input data." not in result.output
+
+    def test_03_cli_writes_length_to_stderr(self):
+        with self.runner.isolated_filesystem():
+            result = self.run_command(["-", "outfile.txt"], input="Input data.")
+            assert "Input data." not in result.output
+            assert "Input length: 11" in result.stderr
