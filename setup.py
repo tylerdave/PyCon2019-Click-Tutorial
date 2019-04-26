@@ -44,6 +44,8 @@ setup(
             "hello=click_tutorial.hello:cli",
             "part-01=lessons.part_01.cli:cli",
             "part-02=lessons.part_02.cli:cli",
+            "part-03=lessons.part_03.cli:cli",
+            "part-06=lessons.part_06.cli:cli",
         ]
     },
     install_requires=requirements,
