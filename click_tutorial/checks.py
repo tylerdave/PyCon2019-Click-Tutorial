@@ -18,8 +18,15 @@ def check_pytest():
     return True
 
 
+def check_cookiecutter():
+    import cookiecutter
+
+    return True
+
+
 ALL_CHECKS = {
     "Python Version": get_python_version,
     "Python 3.5+": check_python_35_plus,
-    "PyTest Installed": check_pytest,
+    "Has PyTest": check_pytest,
+    "Has Cookiecutter": check_cookiecutter,
 }

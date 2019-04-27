@@ -12,6 +12,7 @@ with open("README.md", encoding="utf-8") as readme_file:
 requirements = [
     "Click>=6.0",
     "colorama",
+    "cookiecutter",
     "coverage",
     "pytest-runner",
     "pytest",
@@ -41,7 +42,7 @@ setup(
     description="A tutorial for writing command line applications using click.",
     entry_points={
         "console_scripts": [
-            "hello=click_tutorial.hello:cli",
+            "pycon=click_tutorial.cli:main",
             "part-01=lessons.part_01.cli:cli",
             "part-02=lessons.part_02.cli:cli",
             "part-03=lessons.part_03.cli:cli",
