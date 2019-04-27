@@ -5,7 +5,7 @@ from lessons.part_02.cli import cli
 
 class BaseTutorialLesson:
     def setup(self):
-        self.runner = CliRunner()
+        self.runner = CliRunner(mix_stderr=False)
         self.command = cli
 
     def run_command(self, arguments=None, **kwargs):

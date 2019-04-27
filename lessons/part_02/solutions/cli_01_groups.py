@@ -7,6 +7,7 @@ import click
 def cli():
     """Displays greetings."""
 
+
 @cli.command()
 def hello():
     click.echo("Hello!")
