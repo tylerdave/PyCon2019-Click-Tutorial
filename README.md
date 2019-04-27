@@ -17,6 +17,8 @@ PyCon 2019 Tutorial: Writing Command Line Applications that Click
   
 ### Installation
 
+This repo is a Python package. You will create a virtualenv and install the package which will install its dependencies and make new commands available.
+
 * Open a terminal / command prompt.
   * Recommended on Windows: [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell?view=powershell-6) or [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 * Clone this repo:<br> `git clone https://github.com/tylerdave/PyCon2019-Click-Tutorial.git`
@@ -36,10 +38,7 @@ PyCon 2019 Tutorial: Writing Command Line Applications that Click
     * On Mac/Linux: `source env/bin/activate`
     * On Windows: `.\env\Scripts\activate`
     * `pip install -e .`
-* Verify installation:<br>`tutorial verify`
+* Verify installation:<br>`pycon verify`
 
-## Running the Tutorial
-
-Instructions coming soon 😁
 
 

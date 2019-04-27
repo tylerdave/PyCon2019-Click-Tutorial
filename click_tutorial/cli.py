@@ -5,9 +5,17 @@ import click
 
 from click_tutorial.checks import ALL_CHECKS
 
-@click.group()
+
+@click.group(name="pycon")
 def main(args=None):
-    """Click tutorial runner."""
+    """PyCon Tutorial."""
+
+
+@main.command()
+def hello():
+    """Say hello."""
+    click.echo("Hello!")
+
 
 @main.command()
 def verify():
@@ -26,9 +34,12 @@ def verify():
             click.secho(message=str(err), fg="red", bg="yellow")
             any_failures = True
     if any_failures:
-        click.secho("\nVerification failed. Please see setup instructions.", fg="red")
+        click.secho("\nVerification failed. 😢 Please see setup instructions.", fg="red")
     else:
-        click.secho("\nVerification successful! You're ready to run the tutorial!", fg="blue")
+        click.secho(
+            "\nVerification successful! Your system will be albe to run the tutorial! ✨",
+            fg="blue",
+        )
 
 
 if __name__ == "__main__":
