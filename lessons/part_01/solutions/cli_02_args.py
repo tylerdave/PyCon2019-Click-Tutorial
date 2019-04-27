@@ -3,8 +3,8 @@
 import click
 
 
-@click.argument("names", nargs=-1)
 @click.command()
+@click.argument("names", nargs=-1)
 def cli(names):
     for name in names:
         print("Hello, {}!".format(name))

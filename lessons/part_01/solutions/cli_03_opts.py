@@ -3,10 +3,10 @@
 import click
 
 
+@click.command()
 @click.argument("names", nargs=-1)
 @click.option("--greeting", "-g", default="Hello")
 @click.option("--question/--no-question")
-@click.command()
 def cli(names, greeting, question):
     if question:
         punctuation = "?"
