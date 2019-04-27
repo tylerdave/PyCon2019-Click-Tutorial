@@ -32,7 +32,14 @@ def test_command_line_interface():
     runner = CliRunner()
     result = runner.invoke(cli.main)
     assert result.exit_code == 0
-    assert "Click tutorial runner." in result.output
+    assert "PyCon Tutorial." in result.output
     help_result = runner.invoke(cli.main, ["--help"])
     assert help_result.exit_code == 0
     assert "--help  Show this message and exit." in help_result.output
+
+
+def test_verify_subcommand():
+    runner = CliRunner()
+    result = runner.invoke(cli.main, ["verify"])
+    assert "Verification successful!" in result.output
+    assert result.exit_code == 0
