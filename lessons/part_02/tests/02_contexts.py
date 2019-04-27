@@ -13,7 +13,6 @@ class TestTutorialBasicSubcommands(BaseTutorialLesson):
         assert result.stdout == "Hello!\n"
         assert result.exit_code == 0
 
-
     def test_02_cli_with_verbose_passed_in_object(self):
         result = self.run_command(["--verbose", "goodbye"])
         assert result.stderr == "VERBOSE is on\n"
