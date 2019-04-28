@@ -39,6 +39,6 @@ This repo is a Python package. You will create a virtualenv and install the pack
     * On Windows: `.\env\Scripts\activate`
     * `pip install -e .`
 * Verify installation. One of the commands that's created by this package is `pycon`. You can use it to verify your setup was successful:<br>`pycon verify`
-
+* Initialize tutorial. In the root of the repo, run `tutorial init`. 
 
 
