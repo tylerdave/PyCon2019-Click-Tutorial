@@ -1,0 +1,74 @@
+name = "Click Tutorial"
+
+[[parts]]
+id = 1
+name = "Command Parsing"
+dir = "part_01"
+file = "cli.py"
+
+[[parts.lessons]]
+id = 1
+name = "Hello, PyCon!"
+test = "01_hello.py"
+solution = "cli_01_hello.py"
+
+[[parts.lessons]]
+id = 2
+name = "Arguments"
+test = "02_args.py"
+solution = "cli_02_args.py"
+
+[[parts.lessons]]
+id = 3
+name = "Options"
+test = "03_opts.py"
+solution = "cli_03_opts.py"
+
+[[parts.lessons]]
+id = 4
+name = "Help Documentation"
+test = "04_help.py"
+solution = "cli_04_help.py"
+
+[[parts.lessons]]
+id = 5
+name = "Input Validation"
+test = "05_types.py"
+solution = "cli_05_types.py"
+
+[[parts]]
+id = 2
+name = "Nested Commands"
+dir = "part_02"
+file = "cli.py"
+
+[[parts.lessons]]
+id = 1
+name = "Command Groups"
+test = "01_groups.py"
+solution = "cli_01_groups.py"
+
+[[parts.lessons]]
+id = 2
+name = "Sharing Contexts"
+test = "02_contexts.py"
+solution = "cli_02_contexts.py"
+
+[[parts]]
+id = 3
+name = "Input / Output"
+dir = "part_03"
+file = "cli.py"
+
+[[parts.lessons]]
+id = 1
+name = "Echo"
+test = "01_echo.py"
+solution = "cli_01_echo.py"
+
+[[parts.lessons]]
+id = 2
+name = "File I/O"
+test = "02_file_io.py"
+solution = "cli_02_file_io.py"
+
