@@ -3,7 +3,7 @@ name = "Click Tutorial"
 [[parts]]
 id = 1
 name = "Command Parsing"
-dir = "part_01"
+dir = "lessons/part_01"
 file = "cli.py"
 
 [[parts.lessons]]
@@ -39,7 +39,7 @@ solution = "cli_05_types.py"
 [[parts]]
 id = 2
 name = "Nested Commands"
-dir = "part_02"
+dir = "lessons/part_02"
 file = "cli.py"
 
 [[parts.lessons]]
@@ -57,7 +57,7 @@ solution = "cli_02_contexts.py"
 [[parts]]
 id = 3
 name = "Input / Output"
-dir = "part_03"
+dir = "lessons/part_03"
 file = "cli.py"
 
 [[parts.lessons]]
