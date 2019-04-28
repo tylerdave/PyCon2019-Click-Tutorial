@@ -17,7 +17,7 @@ requirements = [
     "pytest-runner",
     "pytest",
     "tox",
-    "tutorial-runner",
+    "tutorial-runner>=0.2.0",
 ]
 
 setup_requirements = ["pytest-runner"]
