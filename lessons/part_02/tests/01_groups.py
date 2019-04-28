@@ -13,7 +13,6 @@ class TestTutorialBasicSubcommands(BaseTutorialLesson):
         assert result.exit_code == 0
 
     def test_02_cli_wth_invalid_command(self):
-        result = self.run_command(["totally-invalid"])
-        assert result.output.startswith("Usage: cli [OPTIONS] COMMAND [ARGS]...")
-        assert 'Error: No such command "totally-invalid".' in result.output
+        result = self.run_command(["invalid-subcommand"])
+        assert 'Error: No such command "invalid-subcommand".' in result.stderr
         assert result.exit_code == 2
