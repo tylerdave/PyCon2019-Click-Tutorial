@@ -14,5 +14,8 @@ matrix:
 install: pip install -U tox-travis
 
 # Command to run tests, e.g. python setup.py test
-script: tox
+script: >-
+    tox &&
+    tutorial version &&
+    tutorial init
 
