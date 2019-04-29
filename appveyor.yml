@@ -13,6 +13,7 @@ install:
 build: off
 
 test_script:
+    - "tutorial version"
     - "%PYTHON%\\python.exe -m pytest -v"
     - "%PYTHON%\\python.exe -m tutorial_runner version"
     - "%PYTHON%\\python.exe -m tutorial_runner init"
