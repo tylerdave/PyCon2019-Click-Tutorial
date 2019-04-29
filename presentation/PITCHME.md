@@ -205,36 +205,127 @@ Installation
 ------------
 
 - This repo is a Python package
-- Installs `tutorial` command
-- `tutorial verify` will test your environment
-- For initial lessons:
-  - Work in `./click_tutorial/hello.py`
-  - Which is installed as `hello` command
+- Installs commands:
+  - `pycon` and `tutorial`
+  - Commands for lessons: `part-01`, `part-02`, `part-03`
+  - `pytest` and `cookiecutter`
+- `pycon verify` will test your environment
 
 +++
 
-Lessons
--------
+
+Tutorial-Runner
+---------------
+
+```text
+Usage: tutorial [OPTIONS] COMMAND [ARGS]...
+
+  Click tutorial runner.
+
+Options:
+--help Show this message and exit.
+Commands:
+check	Check your work for the current lesson.
+init	(Re-)Initialize the tutorial
+lesson	Switch to a specific lesson
+peek	Look at the solution file without overwriting
+solve	Copy the solution file to the working file.
+status	Show the status of your progress.
+version	Display the version of this command.
+```
 
 +++
 
-Tests
------
-
-+++
-
-Hints
------
-
-+++
-
-Solutions
----------
-
-+++
-
-Need help?
+Initialize
 ----------
+
+```text
+tutorial init
+Tutorial initialized! Time to start your first lesson!
+```
+
++++
+
+Show Lesson
+-----------
+
+```text
+tutorial lesson
+
+Currently working on Part 01, Lesson 01 - Hello, PyCon!
+
+Working file: ~/checkouts/PyCon2019-Click-Tutorial/lessons/part_01/cli.py
+Related docs: https://click.palletsprojects.com/en/7.x/quickstart/#basic-concepts-creating-a-command
+
+Objectives:
+* Learn how to use the `tutorial` command to run and check lessons.
+* Make the tests for the first lesson pass by editing the working file.
+```
+
++++
+
+Check Your Work
+---------------
+
+* Runs tests
+* Outputs assertion results
+* Proceeds to next lesson upon success
+
+```text
+tutorial check
+```
+
++++
+
+Need a hint?
+------------
+
+Display a solution file that makes test pass:
+
+```text
+tutorial peek
+```
+
++++
+
+Solve
+-----
+
+```text
+tutorial solve
+This will make a backup of the working file and then copy the solution file into place.
+  Working file: ~/checkouts/PyCon2019-Click-Tutorial/lessons/part_01/cli.py
+   Backup file: ~/checkouts/PyCon2019-Click-Tutorial/lessons/part_01/cli.2019-04-29.12-54-03.py
+ Solution file: ~/checkouts/PyCon2019-Click-Tutorial/lessons/part_01/solutions/cli_01_hello.py
+Do you wish to proceed? [y/N]:
+```
+
+Then run check to advance
+
+```text
+tutorial check
+```
+
++++
+
+Other Commands
+--------------
+
+Check overall status:
+
+```text
+tutorial status
+```
+
+Skip to specific lesson:
+
+```text
+tutorial lesson --part 1 --lesson 1
+```
+
+```text
+tutorial lesson -p1 -l1
+```
 
 ---?color=#000000;
 
@@ -243,91 +334,158 @@ Tutorial
 
 ---
 
-Lesson: Hello, PyCon!
------------------------
+# Part 01:
+# Command Parsing
+
 
 ---
 
-Lesson: `stdout`/`stderr`
--------------------------
+## Lesson 01-01: Hello, PyCon!
+
+* Learn how to use the `tutorial` command to run and check lessons.
+* Make the tests for the first lesson pass by editing the working file.
 
 ---
 
-Lesson: Arguments
--------------------
+## Lesson 01-02: Arguments
+
+* Make the command accept a positional NAME argument
+  * accept any number of values
+  * print "Hello, NAME!" on a new line for each name given
+  * output nothing if no arguments are passed (noop)
 
 ---
 
-Lesson: Options
------------------
+## Lesson 01-03: Options
+
+* Add multiple options:
+  * Add a `--greeting` option that accepts a custom greeting
+    * Add a short alias for the option: `-g`
+    * Default to "Hello" if no greeting is passed
+  * Add a `--question` option as a flag that doesn't take a value
+    * If passed, end the greeting with "?"
+    * If not passed, end the greeting with "!"
+"
 
 ---
 
-Lesson: Input Validation
-------------------------
+## Lesson 01-04: Help Documentation
+
+* Document your script
+  * Add general command usage help
+  * Add help text to the `--greeting` and `--question` options
+  
+---
+
+## Lesson 01-05: Input Validation
+
+* Add new options to learn how type validation works
+  * Output "int: {VALUE}" if `--int-option` 
+  * Output "float: {VALUE}" if `--float-option` 
+  * Output "bool: {VALUE}" if `--bool-option` 
+  * Add `--choice-option`
+    * Validate values are one of "A", "B", "C"
+    * Output "choice: {VALUE}" if value passed
 
 ---
 
-Lesson: Subcommands
--------------------
+# Part 02:
+# Nested Commands
 
 ---
 
-Lesson: Prompts
----------------
+## Lesson 02-01: Command Groups
+
+* Make a command that has subcommands
+  * Add `hello` subcommand that prints "Hello!"
+  * See that trying to run nonexistent subcommands results in an error
 
 ---
 
-Lesson: Package Layout
-----------------------
+## Lesson 02-02: Sharing Contexts 
+
+* Learn how parameters are handled by the group and by subcommands
+  * Pass `--verbose` group option to `hello` subcommand via `pass_context`
+  * Add a new `goodbye` subcommand
+  * Pass `--verbose` group option to `goodbye` via `pass_obj`
 
 ---
 
-Lesson: Packaging & Installing
-------------------------------
+# Part 03:
+# Input / Output
 
 ---
 
-Lesson: Reading from files
---------------------------
+## Lesson 03-01: Echo
+
+* Customize output destination and formatting
+  * Make "Hello!" print to stdout
+  * Make "Printing..." print to stderr
+  * Add a `--red` option that makes output text red when passed
 
 ---
 
-Lesson: Reading from `stdin`
-----------------------------
+## Lesson 03-02: File I/O
+
+* Read from and write to files or stdin/stdout depending on arguments
+  * Read the input source and write the contents to the output
+  * Accept an input file argument, reading from stdin by default (using `-` arg)
+  * Accept an output file argument, writing to stdout by default (using `-` arg)
+  * Find the length of the input data and print a message to stderr
 
 ---
 
-Lesson: Documentation
----------------------
+# Part 04:
+# Projects & Packaging
 
 ---
 
-Lesson: Testing
----------------
+## Lesson 04-01: Create a Project
+
+* Use `cookiecutter` to create a new project
+* Follow the prompts to enable the CLI
 
 ---
 
-Lesson: Exceptions
-------------------
+## Lesson 04-02: Package Layout
+
+* Explore package layout
+* `setup.py`
+* `setup.cfg`
+* $PACKAGE_NAME/`cli.py`
 
 ---
 
-Lesson: Colors
---------------
+## Lesson 04-03: Development
+
+* Create a virtualenv
+* Install the package in editable mode
+* See changes reflected
 
 ---
 
-Lesson: Pagination
-------------------
+## Lesson 04-04: Testing
+
+* Update tests to match CLI output 
 
 ---
 
-Lesson: Auto-completion
------------------------
+## Lesson 04-05: Build & Publish
+
+* Build distribution files
+* See how to publish on PyPI
 
 ---
 
-Lesson: Progress Bars
----------------------
+## Part 05:
+# Extras
 
+---
+
+## Examples
+
+* Pagination
+* Progress Bars
+* Pagination
+* Launch Editor
+* Handle `ctrl-c`
