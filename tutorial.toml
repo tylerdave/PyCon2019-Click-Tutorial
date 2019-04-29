@@ -139,7 +139,6 @@ https://click.palletsprojects.com/en/7.x/api/#click.echo
 https://click.palletsprojects.com/en/7.x/api/#click.secho
 """
 
-
 [[parts.lessons]]
 id = 2
 name = "File I/O"
