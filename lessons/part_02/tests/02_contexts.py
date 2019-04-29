@@ -2,7 +2,7 @@ from .base import BaseTutorialLesson
 
 
 class TestTutorialBasicSubcommands(BaseTutorialLesson):
-    def test_00_cli_without_command_passed_option(self):
+    def test_00_cli_without_passed_option_doesnt_print_verbose(self):
         result = self.run_command(["hello"])
         assert result.output == "Hello!\n"
         assert result.exit_code == 0

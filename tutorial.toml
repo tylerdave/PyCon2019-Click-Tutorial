@@ -11,30 +11,80 @@ id = 1
 name = "Hello, PyCon!"
 test = "01_hello.py"
 solution = "cli_01_hello.py"
+objectives = """
+* Learn how to use the `tutorial` command to run and check lessons.
+* Make the tests for the first lesson pass by editing the working file.
+"""
+doc-urls = "https://click.palletsprojects.com/en/7.x/quickstart/#basic-concepts-creating-a-command"
 
 [[parts.lessons]]
 id = 2
 name = "Arguments"
 test = "02_args.py"
 solution = "cli_02_args.py"
+objectives = """
+* Make the command accept a positional NAME argument
+  * accept any number of values
+  * print "Hello, NAME!" on a new line for each name given
+  * output nothing if no arguments are passed (noop)
+"""
+doc-urls = "https://click.palletsprojects.com/en/7.x/arguments/#variadic-arguments"
 
 [[parts.lessons]]
 id = 3
 name = "Options"
 test = "03_opts.py"
 solution = "cli_03_opts.py"
+objectives = """
+* Add multiple options:
+  * Add a `--greeting` option that accepts a custom greeting
+    * Print the custom greeting
+    * Add a short alias for the option: `-g`
+    * Default to "Hello" if no greeting is passed
+  * Add a `--question` option as a flag that doesn't take a value
+    * If passed, end the greeting with "?"
+    * If not passed, end the greeting with "!"
+"""
+doc-urls = """|
+https://click.palletsprojects.com/en/7.x/options/
+https://click.palletsprojects.com/en/7.x/options/#boolean-flags
+"""
 
 [[parts.lessons]]
 id = 4
 name = "Help Documentation"
 test = "04_help.py"
 solution = "cli_04_help.py"
+objectives = """
+* Document your script
+  * Add general command usage help
+  * Add help text to the `--greeting` and `--question` options
+"""
+doc-urls = "https://click.palletsprojects.com/en/7.x/documentation/"
 
 [[parts.lessons]]
 id = 5
 name = "Input Validation"
 test = "05_types.py"
 solution = "cli_05_types.py"
+objectives = """
+* Add new options to learn how type validation works
+  * Add `--int-option`
+    * Validate as integer
+    * Output "int: {VALUE}" if value passed
+  * Add `--float-option`
+    * Validate as float
+    * Output "float: {VALUE}" if value passed
+  * Add `--bool-option`
+    * Validate as boolean
+    * Output "bool: {VALUE}" if value passed
+  * Add `--choice-option`
+    * Validate values are one of "A", "B", "C"
+    * Output "choice: {VALUE}" if value passed
+"""
+doc-urls = """|
+https://click.palletsprojects.com/en/7.x/parameters/#parameter-types
+https://click.palletsprojects.com/en/7.x/options/#basic-value-options"""
 
 [[parts]]
 id = 2
@@ -47,12 +97,25 @@ id = 1
 name = "Command Groups"
 test = "01_groups.py"
 solution = "cli_01_groups.py"
+objectives = """
+* Make a command that has subcommands
+  * Add `hello` subcommand that prints "Hello!"
+  * See that trying to run nonexistent subcommands results in an error
+"""
+doc-urls = "https://click.palletsprojects.com/en/7.x/commands/"
 
 [[parts.lessons]]
 id = 2
 name = "Sharing Contexts"
 test = "02_contexts.py"
 solution = "cli_02_contexts.py"
+objectives = """
+* Learn how parameters are handled by the group and by subcommands
+  * Pass `--verbose` group option to `hello` subcommand via `pass_context`
+  * Add a new `goodbye` subcommand
+  * Pass `--verbose` group option to `goodbye` via `pass_obj`
+"""
+doc-urls = "https://click.palletsprojects.com/en/7.x/commands/#passing-parameters"
 
 [[parts]]
 id = 3
@@ -65,10 +128,30 @@ id = 1
 name = "Echo"
 test = "01_echo.py"
 solution = "cli_01_echo.py"
+objectives = """
+* Customize output destination and formatting
+  * Make "Hello!" print to stdout
+  * Make "Printing..." print to stderr
+  * Add a `--red` option that makes output text red when passed
+"""
+doc-urls = """|
+https://click.palletsprojects.com/en/7.x/api/#click.echo
+https://click.palletsprojects.com/en/7.x/api/#click.secho
+"""
 
 [[parts.lessons]]
 id = 2
 name = "File I/O"
 test = "02_file_io.py"
 solution = "cli_02_file_io.py"
-
+objectives = """
+* Read from and write to files or stdin/stdout depending on arguments
+  * Read the input source and write the contents to the output
+  * Accept an input file argument, reading from stdin by default (using `-` arg)
+  * Accept an output file argument, writing to stdout by default (using `-` arg)
+  * Find the length of the input data and print a message to stderr
+"""
+doc-urls = """|
+https://click.palletsprojects.com/en/7.x/arguments/#file-arguments
+https://click.palletsprojects.com/en/7.x/utils/#intelligent-file-opening
+"""
