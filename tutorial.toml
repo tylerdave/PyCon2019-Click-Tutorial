@@ -152,7 +152,7 @@ objectives = """
   * Accept an output file argument, writing to stdout by default (using `-` arg)
   * Find the length of the input data and print a message to stderr
 """
-doc-urls = "|
+doc-urls = """|
 https://click.palletsprojects.com/en/7.x/arguments/#file-arguments
 https://click.palletsprojects.com/en/7.x/utils/#intelligent-file-opening
-"
+"""
