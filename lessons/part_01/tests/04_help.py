@@ -11,13 +11,8 @@ class TestTutorialBasicUsageDocumentation(BaseTutorialLesson):
 
     def test_01_cli_includes_help_text_from_question_option(self):
         result = self.run_command(["--help"])
-        assert re.search(
-            r"--question / --no-question\W+Make the greeting a question\.",
-            result.output,
-        )
+        assert "Make the greeting a question" in result.output
 
     def test_02_cli_includes_help_text_from_greeting_option(self):
         result = self.run_command(["--help"])
-        assert re.search(
-            r"-g, --greeting TEXT\W+The greeting to display.", result.output
-        )
+        assert "The greeting to display" in result.output

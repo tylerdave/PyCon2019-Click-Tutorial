@@ -5,6 +5,7 @@ id = 1
 name = "Command Parsing"
 dir = "lessons/part_01"
 file = "cli.py"
+command = "part01"
 
 [[parts.lessons]]
 id = 1
@@ -38,7 +39,7 @@ solution = "cli_03_opts.py"
 objectives = """
 * Add multiple options:
   * Add a `--greeting` option that accepts a custom greeting
-    * Print the custom greeting
+    * Update to print "GREETING, NAME!" w/ the custom greeting
     * Add a short alias for the option: `-g`
     * Default to "Hello" if no greeting is passed
   * Add a `--question` option as a flag that doesn't take a value
@@ -58,7 +59,11 @@ solution = "cli_04_help.py"
 objectives = """
 * Document your script
   * Add general command usage help
-  * Add help text to the `--greeting` and `--question` options
+    * Include "Displays a greeting."
+  * Add help text to the `--greeting`:
+    * "Make the greeting a question"
+  * Add help text to and `--question`:
+    * "The greeting to display"
 """
 doc-urls = "https://click.palletsprojects.com/en/7.x/documentation/"
 
@@ -68,19 +73,19 @@ name = "Input Validation"
 test = "05_types.py"
 solution = "cli_05_types.py"
 objectives = """
-* Add new options to learn how type validation works
+* Add new options to show how type validation works
   * Add `--int-option`
     * Validate as integer
-    * Output "int: {VALUE}" if value passed
+    * Add output "int: {VALUE}" if value passed
   * Add `--float-option`
     * Validate as float
-    * Output "float: {VALUE}" if value passed
+    * Add output "float: {VALUE}" if value passed
   * Add `--bool-option`
     * Validate as boolean
-    * Output "bool: {VALUE}" if value passed
+    * Add output "bool: {VALUE}" if value passed
   * Add `--choice-option`
     * Validate values are one of "A", "B", "C"
-    * Output "choice: {VALUE}" if value passed
+    * Add output "choice: {VALUE}" if value passed
 """
 doc-urls = """|
 https://click.palletsprojects.com/en/7.x/parameters/#parameter-types
@@ -88,40 +93,10 @@ https://click.palletsprojects.com/en/7.x/options/#basic-value-options"""
 
 [[parts]]
 id = 2
-name = "Nested Commands"
+name = "Input / Output"
 dir = "lessons/part_02"
 file = "cli.py"
-
-[[parts.lessons]]
-id = 1
-name = "Command Groups"
-test = "01_groups.py"
-solution = "cli_01_groups.py"
-objectives = """
-* Make a command that has subcommands
-  * Add `hello` subcommand that prints "Hello!"
-  * See that trying to run nonexistent subcommands results in an error
-"""
-doc-urls = "https://click.palletsprojects.com/en/7.x/commands/"
-
-[[parts.lessons]]
-id = 2
-name = "Sharing Contexts"
-test = "02_contexts.py"
-solution = "cli_02_contexts.py"
-objectives = """
-* Learn how parameters are handled by the group and by subcommands
-  * Pass `--verbose` group option to `hello` subcommand via `pass_context`
-  * Add a new `goodbye` subcommand
-  * Pass `--verbose` group option to `goodbye` via `pass_obj`
-"""
-doc-urls = "https://click.palletsprojects.com/en/7.x/commands/#passing-parameters"
-
-[[parts]]
-id = 3
-name = "Input / Output"
-dir = "lessons/part_03"
-file = "cli.py"
+command = "part02"
 
 [[parts.lessons]]
 id = 1
@@ -155,3 +130,56 @@ doc-urls = """|
 https://click.palletsprojects.com/en/7.x/arguments/#file-arguments
 https://click.palletsprojects.com/en/7.x/utils/#intelligent-file-opening
 """
+
+[[parts]]
+id = 3
+name = "Nested Commands"
+dir = "lessons/part_03"
+file = "cli.py"
+command = "part03"
+
+[[parts.lessons]]
+id = 1
+name = "Command Groups"
+test = "01_groups.py"
+solution = "cli_01_groups.py"
+objectives = """
+* Make a command that has subcommands
+  * Add `hello` subcommand that prints "Hello!"
+  * See that trying to run nonexistent subcommands results in an error
+"""
+doc-urls = "https://click.palletsprojects.com/en/7.x/commands/"
+
+[[parts.lessons]]
+id = 2
+name = "Sharing Contexts"
+test = "02_contexts.py"
+solution = "cli_02_contexts.py"
+objectives = """
+* Learn how parameters are handled by the group and by subcommands
+  * Pass `--verbose` group option to `hello` subcommand via `pass_context`
+    * Store the value in the context's `obj`
+    * If verbose is True, print "VERBOSE is on" to `stderr`
+  * Add a new `goodbye` subcommand
+    * Pass `--verbose` group option to `goodbye` via `pass_obj`
+    * If verbose is True, print "VERBOSE is on" to `stderr`
+
+"""
+doc-urls = "https://click.palletsprojects.com/en/7.x/commands/#passing-parameters"
+
+[[parts]]
+id = 4
+name = "Packaging"
+dir = "lessons/part_04"
+
+[[parts.lessons]]
+id = 1
+name = "Cookiecutter"
+objectives = """
+* Use `cookiecutter` to make a new project directory
+  * `cd` to `lessons/part_04`
+  * `cookiecutter https://github.com/audreyr/cookiecutter-pypackage`
+  * Fill in the prompts with your own values
+  * Be sure to enable click CLI 
+"""
+doc-urls = "https://cookiecutter.readthedocs.io/en/latest/"

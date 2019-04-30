@@ -17,7 +17,3 @@ class TestTutorialBasicOptions(BaseTutorialLesson):
     def test_03_question_option(self):
         result = self.run_command(["--question", "Tutorial"])
         assert result.output == "Hello, Tutorial?\n"
-
-    def test_04_no_question_option(self):
-        result = self.run_command(["--no-question", "Tutorial"])
-        assert result.output == "Hello, Tutorial!\n"

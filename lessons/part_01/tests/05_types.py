@@ -22,12 +22,13 @@ class TestBasicTypes(BaseTutorialLesson):
         assert "Invalid value" in result.output
         assert result.exit_code == 2
 
-    def test_04_cli_valid_bool_option(self):
-        result = self.run_command(["--bool-option", "True"])
-        assert "bool: True\n" in result.output
+    @pytest.mark.parametrize("test_input", ["True", "False"])
+    def test_04_cli_valid_bool_options(self, test_input):
+        result = self.run_command(["--bool-option", test_input])
+        assert "bool: {}\n".format(test_input) in result.output
 
     def test_05_cli_invalid_bool_option(self):
-        result = self.run_command(["--bool-option", "3.14"])
+        result = self.run_command(["--bool-option", "invalid"])
         assert "Invalid value" in result.output
         assert result.exit_code == 2
 

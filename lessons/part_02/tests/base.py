@@ -1,6 +1,6 @@
 from click.testing import CliRunner
 
-from lessons.part_02.cli import cli
+from lessons.part_03.cli import cli
 
 
 class BaseTutorialLesson:
