@@ -5,6 +5,7 @@ id = 1
 name = "Command Parsing"
 dir = "lessons/part_01"
 file = "cli.py"
+command = "part01"
 
 [[parts.lessons]]
 id = 1
@@ -91,6 +92,7 @@ id = 2
 name = "Nested Commands"
 dir = "lessons/part_02"
 file = "cli.py"
+command = "part02"
 
 [[parts.lessons]]
 id = 1
@@ -122,6 +124,7 @@ id = 3
 name = "Input / Output"
 dir = "lessons/part_03"
 file = "cli.py"
+command = "part03"
 
 [[parts.lessons]]
 id = 1
