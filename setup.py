@@ -16,6 +16,7 @@ requirements = [
     "coverage",
     "pytest-runner",
     "pytest>=3.5.0",
+    "setuptools>=30.0.0"
     "tox",
     "tutorial-runner>=0.2.7",
 ]
