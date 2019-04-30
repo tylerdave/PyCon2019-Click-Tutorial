@@ -166,3 +166,20 @@ objectives = """
 
 """
 doc-urls = "https://click.palletsprojects.com/en/7.x/commands/#passing-parameters"
+
+[[parts]]
+id = 4
+name = "Packaging"
+dir = "lessons/part_04"
+
+[[parts.lessons]]
+id = 1
+name = "Cookiecutter"
+objectives = """
+* Use `cookiecutter` to make a new project directory
+  * `cd` to `lessons/part_04`
+  * `cookiecutter https://github.com/audreyr/cookiecutter-pypackage`
+  * Fill in the prompts with your own values
+  * Be sure to enable click CLI 
+"""
+doc-urls = "https://cookiecutter.readthedocs.io/en/latest/"
