@@ -3,7 +3,17 @@ Writing Command Line Applications that Click
 
 Instructions: http://bit.ly/pycon-click
 
+dave@forgac.com - @tylerdave
+
 ---
+
+Welcome to Cleveland!
+=====================
+
+# 🐍&nbsp;&nbsp;🎸&nbsp;&nbsp;🤘
+
+---
+
 
 The Goal
 --------
@@ -60,8 +70,7 @@ This is what allows you to do things like run a program, using grep to filter th
 
 ---
 
-Why?
-====
+> Why?
 
 Note:
 If you make your programs work in this way you can allow users of your programs to take advantage of the rich ecosystem in ways you might not even expect.
@@ -203,7 +212,7 @@ https://click.palletsprojects.com/
 
 +++
 
-```text
+```python
 import click
 
 @click.command()
@@ -404,9 +413,9 @@ Tutorial
 
 ---
 
-## 01-01: Hello, PyCon!
+## Hello, PyCon!
 
-```text
+```python
 import click
 
 @click.command()
@@ -422,9 +431,9 @@ def cli():
 * Make the tests for the first lesson pass by editing the working file.
 
 ---
-## 01-02: Arguments
+## Arguments
 
-```text
+```python
 @click.command()
 @click.argument("names", nargs=1)
 def cli(name):
@@ -442,9 +451,9 @@ def cli(name):
 
 ---
 
-## 01-03: Options
+## Options
 
-```text
+```python
 @click.command()
 @click.argument("name")
 @click.option("--count", "-c", default=1)
@@ -469,6 +478,18 @@ def cli(name):
 
 ---
 
+## Help Documentation
+
+```python
+@click.command()
+@click.option("--count", help="Number of times to print greeting.")
+def cli(count):
+    """Print a greeting."""
+    ...
+```
+
++++
+
 ## 01-04: Help Documentation
 
 * Document your script
@@ -476,6 +497,19 @@ def cli(name):
   * Add help text to the `--greeting` and `--question` options
   
 ---
+
+## Input Validation
+
+```python
+@click.command()
+@click.option("--example", default=1)
+@click.option("--another", type=int)
+@click.option("--color", type=click.Choice("red", "green", "blue"))
+def cli(example, another, color):
+    ...
+```
+
++++
 
 ## 01-05: Input Validation
 
@@ -494,6 +528,22 @@ def cli(name):
 
 ---
 
+## Echo
+
+```python
+@click.command()
+def cli():
+    click.echo("I'm about to print...", err=True)
+    
+    click.echo("Hello!")
+    
+    click.echo(click.style("Green text!", fg="green"))
+    # equivalent:
+    click.secho("Green text!", fg="green")
+```
+
++++
+
 ## 02-01: Echo
 
 * Customize output destination and formatting
@@ -502,6 +552,17 @@ def cli(name):
   * Add a `--red` option that makes output text red when passed
 
 ---
+
+## File I/O
+
+```python
+@click.command()
+@click.argument("infile", type=click.File("r"), default="-")
+def cli(infile):
+    text = infile.read()
+```
+
++++
 
 ## 02-02: File I/O
 
@@ -517,6 +578,21 @@ def cli(name):
 
 ---
 
+## Command Groups
+
+```python
+@click.group()
+def example_command():
+    """I'm an example command."""
+
+@example_command.command()
+def example_subcommand():
+    """Says hi."""
+    click.echo("Hello, world!")
+```
+
++++
+
 ## 03-01: Command Groups
 
 * Make a command that has subcommands
@@ -524,6 +600,28 @@ def cli(name):
   * See that trying to run nonexistent subcommands results in an error
 
 ---
+
+## Sharing Contexts
+
+```python
+@click.group()
+@click.pass_context
+def example_command(ctx):
+    ctx.obj = {"setting": "value"}
+
+@example_command.command()
+@click.pass_context
+def example_subcommand(ctx):
+    sttings = ctx.obj
+    click.echo(settings.get("setting"))
+
+@example_command.command()
+@click.pass_obj
+def another_subcommand(obj):
+    click.echo(obj.get("setting"))
+```
+
++++
 
 ## 03-02: Sharing Contexts 
 
@@ -577,7 +675,7 @@ def cli(name):
 
 ---
 
-## Part 05:
+# Part 05:
 # Extras
 
 ---
@@ -592,5 +690,12 @@ def cli(name):
 
 ---
 
-Feedback & Questions
---------------------
+Thank You!
+==========
+
+Feedback / Questions?
+---------------------
+
+dave@forgac.com
+
+@tylerdave
