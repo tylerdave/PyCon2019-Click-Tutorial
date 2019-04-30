@@ -59,7 +59,11 @@ solution = "cli_04_help.py"
 objectives = """
 * Document your script
   * Add general command usage help
-  * Add help text to the `--greeting` and `--question` options
+    * Include "Displays a greeting."
+  * Add help text to the `--greeting`:
+    * "Make the greeting a question"
+  * Add help text to and `--question`:
+    * "The greeting to display"
 """
 doc-urls = "https://click.palletsprojects.com/en/7.x/documentation/"
 
@@ -69,19 +73,19 @@ name = "Input Validation"
 test = "05_types.py"
 solution = "cli_05_types.py"
 objectives = """
-* Add new options to learn how type validation works
+* Add new options to show how type validation works
   * Add `--int-option`
     * Validate as integer
-    * Output "int: {VALUE}" if value passed
+    * Add output "int: {VALUE}" if value passed
   * Add `--float-option`
     * Validate as float
-    * Output "float: {VALUE}" if value passed
+    * Add output "float: {VALUE}" if value passed
   * Add `--bool-option`
     * Validate as boolean
-    * Output "bool: {VALUE}" if value passed
+    * Add output "bool: {VALUE}" if value passed
   * Add `--choice-option`
     * Validate values are one of "A", "B", "C"
-    * Output "choice: {VALUE}" if value passed
+    * Add output "choice: {VALUE}" if value passed
 """
 doc-urls = """|
 https://click.palletsprojects.com/en/7.x/parameters/#parameter-types
@@ -154,7 +158,11 @@ solution = "cli_02_contexts.py"
 objectives = """
 * Learn how parameters are handled by the group and by subcommands
   * Pass `--verbose` group option to `hello` subcommand via `pass_context`
+    * Store the value in the context's `obj`
+    * If verbose is True, print "VERBOSE is on" to `stderr`
   * Add a new `goodbye` subcommand
-  * Pass `--verbose` group option to `goodbye` via `pass_obj`
+    * Pass `--verbose` group option to `goodbye` via `pass_obj`
+    * If verbose is True, print "VERBOSE is on" to `stderr`
+
 """
 doc-urls = "https://click.palletsprojects.com/en/7.x/commands/#passing-parameters"
