@@ -426,7 +426,7 @@ def cli():
 
 ```text
 @click.command()
-@click.argument("name")
+@click.argument("names", nargs=1)
 def cli(name):
     print(f"Hello, {name}.")
 ```
@@ -447,13 +447,12 @@ def cli(name):
 ```text
 @click.command()
 @click.argument("name")
-@click.option("--count", "-c", type=int)
+@click.option("--count", "-c", default=1)
 @click.option("--green", is_flag=True)
 @click.option("--debug/--no-debug")
 def cli(name):
     ...
 ```
-
 
 +++
 
@@ -491,33 +490,11 @@ def cli(name):
 ---
 
 # Part 02:
-# Nested Commands
-
----
-
-## 02-01: Command Groups
-
-* Make a command that has subcommands
-  * Add `hello` subcommand that prints "Hello!"
-  * See that trying to run nonexistent subcommands results in an error
-
----
-
-## 02-02: Sharing Contexts 
-
-* Learn how parameters are handled by the group and by subcommands
-  * Pass `--verbose` group option to `hello` subcommand via `pass_context`
-  * Add a new `goodbye` subcommand
-  * Pass `--verbose` group option to `goodbye` via `pass_obj`
-
----
-
-# Part 03:
 # Input / Output
 
 ---
 
-## 03-01: Echo
+## 02-01: Echo
 
 * Customize output destination and formatting
   * Make "Hello!" print to stdout
@@ -526,7 +503,7 @@ def cli(name):
 
 ---
 
-## 03-02: File I/O
+## 02-02: File I/O
 
 * Read from and write to files or stdin/stdout depending on arguments
   * Read the input source and write the contents to the output
@@ -535,6 +512,28 @@ def cli(name):
   * Find the length of the input data and print a message to stderr
 
 ---
+# Part 03:
+# Nested Commands
+
+---
+
+## 03-01: Command Groups
+
+* Make a command that has subcommands
+  * Add `hello` subcommand that prints "Hello!"
+  * See that trying to run nonexistent subcommands results in an error
+
+---
+
+## 03-02: Sharing Contexts 
+
+* Learn how parameters are handled by the group and by subcommands
+  * Pass `--verbose` group option to `hello` subcommand via `pass_context`
+  * Add a new `goodbye` subcommand
+  * Pass `--verbose` group option to `goodbye` via `pass_obj`
+
+---
+
 
 # Part 04:
 # Projects & Packaging
