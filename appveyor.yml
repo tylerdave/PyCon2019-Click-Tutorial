@@ -15,12 +15,12 @@ build: off
 
 test_script:
     - "%PYTHON%\\python.exe -m pytest -v"
-    - "%PYTHON%\\python.exe -m pycon verify"
-    - "%PYTHON%\\python.exe -m tutorial_runner version"
-    - "%PYTHON%\\python.exe -m tutorial_runner init"
-    - "%PYTHON%\\python.exe -m tutorial_runner lesson"
-    - "%PYTHON%\\python.exe -m tutorial_runner solve --yes"
-    - "%PYTHON%\\python.exe -m tutorial_runner check"
+    - "pycon verify"
+    - "tutorial version"
+    - "tutorial init"
+    - "tutorial lesson"
+    - "tutorial solve --yes"
+    - "tutorial check"
 
 #after_test:
     # None
