@@ -27,8 +27,11 @@ This repo is a Python package. You will create a virtualenv and install the pack
 * Create and activate a virtualenv using your favorite method and then install the package:
   * **Recommended:** using `pipenv` ([installation instructions](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv)):
     * `pipenv --python python3`
-    * `pipenv shell`
     * `pipenv install`
+    * On Mac/Linux:
+      * `pipenv shell`
+    * On Windows: 
+      * `pipenv shell` might give you a reduced feature shell. You should run commands with `pipenv run $COMMAND` instead like: `pipenv run pycon verify` instead of just `pycon verify` in the step below.
   * If using `virtualenvwrapper`:
     * `mkvirtualenv --python python3 click-tutorial`
     * `workon click-tutorial`
