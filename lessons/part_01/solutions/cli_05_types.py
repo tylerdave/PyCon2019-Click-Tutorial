@@ -25,7 +25,7 @@ def cli(
         print("int: {}".format(int_option))
     if float_option:
         print("float: {}".format(float_option))
-    if bool_option:
+    if bool_option is not None:
         print("bool: {}".format(bool_option))
     if choice_option:
         print("choice: {}".format(choice_option))
