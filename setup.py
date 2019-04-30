@@ -15,7 +15,7 @@ requirements = [
     "cookiecutter",
     "coverage",
     "pytest-runner",
-    "pytest",
+    "pytest>=3.5.0",
     "tox",
     "tutorial-runner>=0.2.5",
 ]
