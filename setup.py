@@ -55,7 +55,7 @@ setup(
     include_package_data=True,
     keywords="click_tutorial",
     name="click_tutorial",
-    packages=find_packages(include=["click_tutorial"]),
+    packages=find_packages(include=["click_tutorial", "lessons"]),
     setup_requires=setup_requirements,
     test_suite="tests",
     tests_require=test_requirements,
