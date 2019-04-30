@@ -196,6 +196,49 @@ Output \u001b[31;1mshouln't\u001b[30;1m look like this.
 
 ---
 
+Click
+=====
+
+https://click.palletsprojects.com/
+
++++
+
+```text
+import click
+
+@click.command()
+@click.option('--count', default=1,
+              help='Number of greetings.')
+@click.option('--name', prompt='Your name',
+              help='The person to greet.')
+def hello(count, name):
+    """Simple program that greets NAME for a total of 
+    COUNT times."""
+    for x in range(count):
+        click.echo('Hello %s!' % name)
+
+if __name__ == '__main__':
+    hello()
+```
+
++++
+
+```text
+Usage: cl.py [OPTIONS]
+
+  Simple program that greets NAME for a total of COUNT times.
+
+Options:
+  --count INTEGER  Number of greetings.
+  --name TEXT      The person to greet.
+  --help           Show this message and exit.
+```
+
+
+
+
+---
+
 The Tutorial
 =============
 
@@ -207,7 +250,7 @@ Installation
 - This repo is a Python package
 - Installs commands:
   - `pycon` and `tutorial`
-  - Commands for lessons: `part-01`, `part-02`, `part-03`
+  - Lessons: `part01`, `part02`, `part03`
   - `pytest` and `cookiecutter`
 - `pycon verify` will test your environment
 
@@ -254,13 +297,34 @@ tutorial lesson
 
 Currently working on Part 01, Lesson 01 - Hello, PyCon!
 
-Working file: ~/checkouts/PyCon2019-Click-Tutorial/lessons/part_01/cli.py
+Working file: lessons/part_01/cli.py
+       Tests: lessons/part_01/tests/01_hello.py
+     Command: part01
 Related docs: https://click.palletsprojects.com/en/7.x/quickstart/#basic-concepts-creating-a-command
 
 Objectives:
 * Learn how to use the `tutorial` command to run and check lessons.
 * Make the tests for the first lesson pass by editing the working file.
 ```
+
++++
+
+Try running the command
+
+```text
+part01
+Hello.
+```
+
+```text
+part01 --help
+Usage: part01 [OPTIONS]
+
+Options:
+  --help  Show this message and exit.
+```
+
+
 
 +++
 
@@ -294,9 +358,9 @@ Solve
 ```text
 tutorial solve
 This will make a backup of the working file and then copy the solution file into place.
-  Working file: ~/checkouts/PyCon2019-Click-Tutorial/lessons/part_01/cli.py
-   Backup file: ~/checkouts/PyCon2019-Click-Tutorial/lessons/part_01/cli.2019-04-29.12-54-03.py
- Solution file: ~/checkouts/PyCon2019-Click-Tutorial/lessons/part_01/solutions/cli_01_hello.py
+  Working file: lessons/part_01/cli.py
+   Backup file: lessons/part_01/cli.2019-04-29.12-54-03.py
+ Solution file: lessons/part_01/solutions/cli_01_hello.py
 Do you wish to proceed? [y/N]:
 ```
 
@@ -340,14 +404,36 @@ Tutorial
 
 ---
 
-## Lesson 01-01: Hello, PyCon!
+## 01-01: Hello, PyCon!
+
+```text
+import click
+
+@click.command()
+def cli():
+    print("Hello.")
+```
+
++++
+
+## 01-01: Hello, PyCon!
 
 * Learn how to use the `tutorial` command to run and check lessons.
 * Make the tests for the first lesson pass by editing the working file.
 
 ---
+## 01-02: Arguments
 
-## Lesson 01-02: Arguments
+```text
+@click.command()
+@click.argument("name")
+def cli(name):
+    print(f"Hello, {name}.")
+```
+
++++
+
+## 01-02: Arguments
 
 * Make the command accept a positional NAME argument
   * accept any number of values
@@ -356,11 +442,26 @@ Tutorial
 
 ---
 
-## Lesson 01-03: Options
+## 01-03: Options
+
+```text
+@click.command()
+@click.argument("name")
+@click.option("--count", "-c", type=int)
+@click.option("--green", is_flag=True)
+@click.option("--debug/--no-debug")
+def cli(name):
+    ...
+```
+
+
++++
+
+## 01-03: Options
 
 * Add multiple options:
-  * Add a `--greeting` option that accepts a custom greeting
-    * Add a short alias for the option: `-g`
+  * Add `--greeting` to specify greeting text
+    * With a short alias: `-g`
     * Default to "Hello" if no greeting is passed
   * Add a `--question` option as a flag that doesn't take a value
     * If passed, end the greeting with "?"
@@ -369,7 +470,7 @@ Tutorial
 
 ---
 
-## Lesson 01-04: Help Documentation
+## 01-04: Help Documentation
 
 * Document your script
   * Add general command usage help
@@ -377,7 +478,7 @@ Tutorial
   
 ---
 
-## Lesson 01-05: Input Validation
+## 01-05: Input Validation
 
 * Add new options to learn how type validation works
   * Output "int: {VALUE}" if `--int-option` 
@@ -394,7 +495,7 @@ Tutorial
 
 ---
 
-## Lesson 02-01: Command Groups
+## 02-01: Command Groups
 
 * Make a command that has subcommands
   * Add `hello` subcommand that prints "Hello!"
@@ -402,7 +503,7 @@ Tutorial
 
 ---
 
-## Lesson 02-02: Sharing Contexts 
+## 02-02: Sharing Contexts 
 
 * Learn how parameters are handled by the group and by subcommands
   * Pass `--verbose` group option to `hello` subcommand via `pass_context`
@@ -416,7 +517,7 @@ Tutorial
 
 ---
 
-## Lesson 03-01: Echo
+## 03-01: Echo
 
 * Customize output destination and formatting
   * Make "Hello!" print to stdout
@@ -425,7 +526,7 @@ Tutorial
 
 ---
 
-## Lesson 03-02: File I/O
+## 03-02: File I/O
 
 * Read from and write to files or stdin/stdout depending on arguments
   * Read the input source and write the contents to the output
@@ -440,14 +541,14 @@ Tutorial
 
 ---
 
-## Lesson 04-01: Create a Project
+## 04-01: Create a Project
 
 * Use `cookiecutter` to create a new project
 * Follow the prompts to enable the CLI
 
 ---
 
-## Lesson 04-02: Package Layout
+## 04-02: Package Layout
 
 * Explore package layout
 * `setup.py`
@@ -456,7 +557,7 @@ Tutorial
 
 ---
 
-## Lesson 04-03: Development
+## 04-03: Development
 
 * Create a virtualenv
 * Install the package in editable mode
@@ -464,13 +565,13 @@ Tutorial
 
 ---
 
-## Lesson 04-04: Testing
+## 04-04: Testing
 
 * Update tests to match CLI output 
 
 ---
 
-## Lesson 04-05: Build & Publish
+## 04-05: Build & Publish
 
 * Build distribution files
 * See how to publish on PyPI
@@ -489,3 +590,8 @@ Tutorial
 * Pagination
 * Launch Editor
 * Handle `ctrl-c`
+
+---
+
+Feedback & Questions
+--------------------
