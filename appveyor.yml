@@ -14,6 +14,7 @@ build: off
 
 test_script:
     - "%PYTHON%\\python.exe -m pytest -v"
+    - "%PYTHON%\\python.exe -m pycon verify"
     - "%PYTHON%\\python.exe -m tutorial_runner version"
     - "%PYTHON%\\python.exe -m tutorial_runner init"
     - "%PYTHON%\\python.exe -m tutorial_runner lesson"
