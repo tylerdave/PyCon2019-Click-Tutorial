@@ -183,3 +183,43 @@ objectives = """
   * Be sure to enable click CLI 
 """
 doc-urls = "https://cookiecutter.readthedocs.io/en/latest/"
+
+[[parts.lessons]]
+id = 2
+name = "Installing Editable"
+objectives = """
+* Install your new package in editable mode
+* Optionally create a new virtualenv
+* Install via `pip install -e .` within the package dir.
+"""
+doc-urls = "https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/pip.html#installing-from-a-vcs"
+
+[[parts.lessons]]
+id = 3
+name = "Distribution Packages"
+objectives = """
+* Build distribution packages for your project
+* `python setup.py sdist bdist_wheel`
+* Via `Makefile`: `make build`
+"""
+doc-urls = "https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/creation.html#creating-your-distribution-file"
+
+[[parts]]
+id = 5
+name = "Bonus"
+dir = "lessons/part_05"
+file = "cli.py"
+command = "part05"
+
+[[parts.lessons]]
+id = 1
+name = "Bonus Examples"
+objectives = """
+* See the command for examples of click features
+  * Paging
+  * Launching Editor
+  * Launching Applications
+  * Finding Application Folder
+  * Progress Bar
+"""
+doc-urls = "https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/creation.html#creating-your-distribution-file"
