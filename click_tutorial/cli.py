@@ -35,10 +35,10 @@ def verify():
             click.secho(message=str(err), fg="red", bg="yellow")
             any_failures = True
     if any_failures:
-        click.secho("\nVerification failed. 😢 Please see setup instructions.", fg="red")
+        click.secho("\nVerification failed. Please see setup instructions.", fg="red")
     else:
         click.secho(
-            "\nVerification successful! Your system will be albe to run the tutorial! ✨",
+            "\nVerification successful! Your system will be albe to run the tutorial!",
             fg="blue",
         )
 
