@@ -8,3 +8,6 @@ pylint = "*"
 
 [packages]
 click-tutorial = {path = ".",editable = true}
+
+[pipenv]
+allow_prereleases = true
