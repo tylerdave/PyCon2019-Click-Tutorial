@@ -643,6 +643,27 @@ def another_subcommand(obj):
 * Use `cookiecutter` to create a new project
 * Follow the prompts to enable the CLI
 
++++
+
+## 04-01: Cookiecutter Example
+
+```text
+full_name [Audrey Roy Greenfeld]: Dave Forgac
+email [audreyr@example.com]: tylerdave@tylerdave.com
+github_username [audreyr]: tylerdave
+project_name [Python Boilerplate]: Example CLI
+project_slug [example_cli]:
+project_short_description [Python Boilerplate.]: An example CLI project
+pypi_username [tylerdave]: tylerdave
+version [0.1.0]: 0.0.1
+use_pytest [n]: y
+use_pypi_deployment_with_travis [y]: n
+Select command_line_interface:
+1 - Click
+2 - No command-line interface
+Choose from 1, 2 (1, 2) [1]: 1
+```
+
 ---
 
 ## 04-02: Package Layout
