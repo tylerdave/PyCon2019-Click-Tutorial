@@ -62,7 +62,7 @@ objectives = """
     * Include "Displays a greeting."
   * Add help text to the `--greeting`:
     * "The greeting to display"
-  * Add help text to and `--question`:
+  * Add help text to the `--question`:
     * "Make the greeting a question"
 """
 doc-urls = "https://click.palletsprojects.com/en/7.x/documentation/"
